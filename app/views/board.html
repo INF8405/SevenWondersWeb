@@ -1,0 +1,8 @@
+<section ng-controller="board" class="board">
+	<ul class="hand fold">
+		<li ng-repeat="card in hand" class="card">
+			<img ng-src="/images/assets/{{ card }}.png">
+		</li>
+	</ul>
+	<img ng-src="/images/assets/{{ civilisation }}.png" class="civilisation">
+</section>

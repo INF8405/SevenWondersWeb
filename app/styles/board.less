@@ -1,0 +1,50 @@
+@cardwidth: 150px;
+@cardheigh: @cardwidth * 1.6;
+.card img {
+	height: @cardheigh;
+	width: @cardwidth;
+	vertical-align: bottom;
+}
+
+.board {
+	margin-left: 2%;
+	margin-right: 2%;
+	width: 96%;
+	position: absolute;
+	bottom: 0;
+	z-index: -1;
+}
+
+.civilisation {
+	margin-left: 20px;
+}
+
+.hand {
+	padding-left: 0;
+	position: absolute;
+	bottom: 90px;
+}
+
+.hand li {
+	list-style-type: none;
+	display: inline-block;
+}
+
+.fold {
+	* * { margin-right: -@cardwidth/4; }
+	*:hover { 
+		margin-right: 0;
+	}
+	*:hover * {
+		height: auto;
+		width: auto;
+	}
+	*:nth-last-child(1) { z-index: 1 }
+	*:nth-last-child(2) { z-index: 2 }
+	*:nth-last-child(3) { z-index: 3 }
+	*:nth-last-child(4) { z-index: 4 }
+	*:nth-last-child(5) { z-index: 5 }
+	*:nth-last-child(6) { z-index: 6 }
+	*:nth-last-child(7) { z-index: 7 }
+	*:nth-last-child(8) { z-index: 8 }
+}
