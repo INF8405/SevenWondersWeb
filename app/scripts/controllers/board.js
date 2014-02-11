@@ -1,5 +1,9 @@
 app.controller('board', function ($scope) {
 	$scope.civilisation = "babylon_b";
+	$scope.selected = "";
+	$scope.select = function(card){
+		$scope.selected = card;
+	}
 	$scope.hand = [
 		"press",
 		"tree_farm",
@@ -10,4 +14,14 @@ app.controller('board', function ($scope) {
 		"theater",
 		"academy"
 	];
+	$scope.ressources = [
+		"loom",
+		"glassworks",
+		"timber_yard",
+		"ore_vein",
+		"forest_cave",
+		"sawmill",
+		"quarry",
+		"foundry"
+	]
 });

@@ -1,9 +1,15 @@
 @cardwidth: 150px;
 @cardheigh: @cardwidth * 1.6;
-.card img {
-	height: @cardheigh;
-	width: @cardwidth;
-	vertical-align: bottom;
+
+.card {
+	img {
+		height: @cardheigh;
+		width: @cardwidth;
+		vertical-align: bottom;
+	}
+	&.selected img {
+		border: 10px solid yellow;
+	}
 }
 
 .board {
@@ -15,8 +21,15 @@
 	z-index: -1;
 }
 
+.tableau {
+	li, .group li {
+		display: inline;
+	}
+}
+
 .civilisation {
 	margin-left: 20px;
+	margin-bottom: 20px;
 }
 
 .hand {
@@ -25,20 +38,32 @@
 	bottom: 90px;
 }
 
-.hand li {
+.stack li {
 	list-style-type: none;
-	display: inline-block;
 }
 
-.fold {
+.hfold {
+	li {
+		display: inline-block;
+	}
 	* * { margin-right: -@cardwidth/4; }
-	*:hover { 
+	:hover { 
 		margin-right: 0;
 	}
-	*:hover * {
+	:hover * {
 		height: auto;
 		width: auto;
 	}
+}
+
+.vfold {
+	* * { margin-bottom: -@cardheigh* 3/4; }
+	:hover {
+		margin-bottom: 0; 
+	}
+}
+
+.stack {
 	*:nth-last-child(1) { z-index: 1 }
 	*:nth-last-child(2) { z-index: 2 }
 	*:nth-last-child(3) { z-index: 3 }

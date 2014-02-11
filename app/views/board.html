@@ -1,7 +1,13 @@
 <section ng-controller="board" class="board">
-	<ul class="hand fold">
-		<li ng-repeat="card in hand" class="card">
-			<img ng-src="/images/assets/{{ card }}.png">
+	<ul class="hand stack hfold">
+		<li ng-repeat="card in hand" class="card" 
+			ng-class="{selected: card == selected}" ng-click="select(card)">
+			<img alt="{{ card }} card" ng-src="/images/assets/{{ card }}.png">
+		</li>
+	</ul>
+	<ul class="ressource stack vfold">
+		<li ng-repeat="card in ressources" class="card">
+			<img alt="{{ card }} card" ng-src="/images/assets/{{ card }}.png">
 		</li>
 	</ul>
 	<img ng-src="/images/assets/{{ civilisation }}.png" class="civilisation">
