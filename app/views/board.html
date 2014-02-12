@@ -5,10 +5,21 @@
 			<img alt="{{ card }} card" ng-src="/images/assets/{{ card }}.png">
 		</li>
 	</ul>
-	<ul class="ressource stack vfold">
-		<li ng-repeat="card in ressources" class="card">
-			<img alt="{{ card }} card" ng-src="/images/assets/{{ card }}.png">
-		</li>
-	</ul>
+	<div class="tableau">
+		<ul class="stack vfold">
+			<li ng-repeat="card in ressources" class="card">
+				<img alt="{{ card }} card" ng-src="/images/assets/{{ card }}.png">
+			</li>
+		</ul>
+		<ul>
+			<li ng-repeat="(type, cards) in tableau" class="{{ type }} group">
+				<ul class="stack vfold hfold">
+					<li ng-repeat="card in cards" class="card">
+						<img alt="{{ card }} card" ng-src="/images/assets/{{ card }}.png">
+					</li>	
+				</ul>
+			</li>
+		</ul>
+	</div>
 	<img ng-src="/images/assets/{{ civilisation }}.png" class="civilisation">
 </section>

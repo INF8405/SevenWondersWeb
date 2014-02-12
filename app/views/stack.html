@@ -1,0 +1,28 @@
+<section ng-controller="stack">
+	<ul class="stack vfold shifted resources">
+		<li ng-repeat="card in resources" class="card">
+			<img alt="{{ card }} card" ng-src="/images/assets/{{ card }}.png">
+		</li>
+	</ul>
+	<ul class="stack vfold shifted">
+		<li ng-repeat="card in military" class="card">
+			<img alt="{{ card }} card" ng-src="/images/assets/{{ card }}.png">
+		</li>
+	</ul>
+	<ul class="stack vfold shifted">
+		<li ng-repeat="card in civilian" class="card">
+			<img alt="{{ card }} card" ng-src="/images/assets/{{ card }}.png">
+		</li>
+	</ul>
+	<ul class="stack vfold shifted commercial">
+		<li ng-repeat="card in commercial" class="card">
+			<img alt="{{ card }} card" ng-src="/images/assets/{{ card }}.png">
+		</li>
+	</ul>
+	<ul class="stack vfold shifted guilds">
+		<li ng-repeat="card in guilds" class="card">
+			<img alt="{{ card }} card" ng-src="/images/assets/{{ card }}.png">
+		</li>
+	</ul>
+
+</section>

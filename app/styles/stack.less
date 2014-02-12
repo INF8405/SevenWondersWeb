@@ -1,0 +1,83 @@
+.stack {
+	@maxCards: 32;
+	@cardwidth: 140px;
+	@cardheight: @cardwidth * 1.6;
+
+	// display: inline-block;
+	float: left;
+	padding-left: 0;
+	margin-right: @cardwidth;
+
+	// stack z-index from 1 to maxCards
+	._(@index) when(@index =< @maxCards) {
+		.card:nth-child(@{index}) { 
+			z-index: @index;
+		}
+		._(@index + 1);
+	}
+	._(1);
+
+	// selected card on top
+	.card:hover{ 
+		z-index: @maxCards + 1;
+		// .originalSize();
+	}
+
+	.card {
+		// li take the whole width of the page
+		// float: left;
+		// clear: left;
+
+		img {
+			height: @cardheight;
+			width: @cardwidth;
+		}
+	}
+
+	&.hfold {
+		.card {
+			display: inline-block;
+			margin-right: -@cardwidth/4;
+
+			&:hover {
+				margin-right: 0;
+				.originalSize();
+			}
+		}
+	}
+
+	&.vfold {
+		.card {
+			margin-bottom: -@cardheight* 3/4;
+
+			&:hover {
+				// margin-bottom: 0;
+			}
+		}
+	}
+
+	&.shifted {
+
+		// index = 1 .. maxCards
+		._(@index) when(@index =< @maxCards) {
+			.card:nth-child(@{index}) { 
+				left: unit(@index * (@cardheight/7), px);
+			}
+			._(@index + 1);
+		}
+		._(1);
+
+		.card { position: relative; }
+	}
+
+	li {
+		list-style-type: none;
+	}
+
+	.originalSize {
+		img {
+			height: auto;
+			width: auto;
+		}
+	}
+}

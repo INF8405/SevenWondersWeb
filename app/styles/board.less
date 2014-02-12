@@ -21,10 +21,8 @@
 	z-index: -1;
 }
 
-.tableau {
-	li, .group li {
-		display: inline;
-	}
+.stack li, .tableau li, .group li {
+	list-style-type: none;
 }
 
 .civilisation {
@@ -36,23 +34,20 @@
 	padding-left: 0;
 	position: absolute;
 	bottom: 90px;
-}
 
-.stack li {
-	list-style-type: none;
-}
-
-.hfold {
 	li {
 		display: inline-block;
 	}
+}
+
+.hfold {
 	* * { margin-right: -@cardwidth/4; }
 	:hover { 
 		margin-right: 0;
 	}
 	:hover * {
-		height: auto;
-		width: auto;
+			height: auto;
+			width: auto;
 	}
 }
 
@@ -61,6 +56,10 @@
 	:hover {
 		margin-bottom: 0; 
 	}
+}
+
+.tableau > * {
+	display: inline;
 }
 
 .stack {

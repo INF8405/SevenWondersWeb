@@ -14,6 +14,19 @@ app.controller('board', function ($scope) {
 		"theater",
 		"academy"
 	];
+	// $scope.tableau = {
+	// 	militia: [
+	// 		"barracks",
+	// 		"walls",
+	// 		"fortifications",
+	// 		"arsenal"
+	// 	]/*,
+	// 	civilian: [
+	// 		"baths",
+	// 		"aqueduct",
+	// 		"temple"
+	// 	]*/
+	// };
 	$scope.ressources = [
 		"loom",
 		"glassworks",
